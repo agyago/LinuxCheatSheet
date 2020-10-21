@@ -31,4 +31,19 @@ common commands
 | free -m | show amount of remaining ram |
 | watch -n.1 'cat /proc/interrupts' | watch changable data continuously |
 | udevadm monitor | monitor udev events to help configure rules |
-
+| | |
+| uname -a | kernel version and system arch |
+| head -n1 /etc/issue | show name and version of distribution |
+| cat /proc/paritions | partitions registred on the system |
+| grep MemTotal /proc/meminfo | RAM total seen by system |
+| grep "model name" /proc/cpuinfo | cpu info |
+| lscpi -tv | show pci info |
+| lsusb  -tv | show usb info |
+| mount \| column -t | list mounted filesystem |
+| dmidecode -q \| less | display bios info |
+| smartctl -A /dev/sda \| grep Power_On_hours | disk uptime
+| smartctl -x /dev/disk | show all  information of disk |
+| hdparm -i /dev/disk |  show info about disk data |
+| hdparm -tT /dev/disk | read speed test on disk |
+| badblocks -s /dev/disk | test for unreadable blocks |
+| | |
