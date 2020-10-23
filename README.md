@@ -68,7 +68,7 @@ common commands
 | sed 's/\\([\`"$\\]\\)/\\\\1/g' | escape shell metachar active within double quotes |
 | sed 's/[\\t]\*$//' | remove trailing spaces from lines |
 | seq 10 \| sed "s/^/ /; s/ \*\\(.\\{7,\\}\\)/\\1/" | right align numbers |
-| seq 10 \| sed p | paste -- | duplicate a column |
+| seq 10 \| sed p \| paste -- | duplicate a column |
 | sed -n '1000{p;g}' | print 1000th line |
 | sed -n '10,20p;20g' | print lines 10 to 20 |
 | sed -n 's/.\*<title>\\(.*\\)<\\/title>.\*/\\1/ip;T;q' | extract title from html web page |
