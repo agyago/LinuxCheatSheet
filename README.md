@@ -77,6 +77,14 @@ common commands
 | tr -s '[:blank:]''\\t'</proc/diskstats \| cut -f4 | cut fields separated by blanks |
 | seq 10 \| paste -sd '' | concat and separate line items to a single line |
 | | |
-
+| sort -u file1 file 2 | union of unsorted files |
+| sort file1 file2 \| uniq -d | intersection of unsorted files |
+| sort file1 file1 file2 \| uniq -d | diference of unsorted files |
+| sort file1 file2 \| uniq -u | symmetric difference of unsorted files |
+| join -t'\\0' -a1 -a2 file1 file2 | union of sorted files |
+| join -t'\\0' file1 file2 | intersection of sorted files |
+| join -t'\\0' -v2 file1 file2 | difference of sorted files |
+| join -t'\\0' -v1 -v2 file1 file2 | symmetric difference of sorted files |
+| | |
 
 
