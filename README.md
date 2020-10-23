@@ -47,3 +47,36 @@ common commands
 | hdparm -tT /dev/disk | read speed test on disk |
 | badblocks -s /dev/disk | test for unreadable blocks |
 | | |
+| ethtool eth0 | show status of ethernet interface |
+| ethtool --change eth0 autoneg off speed 100 duplex full | manually set ethernet interface speed |
+| ip link show | list network interfaces |
+| ip link set dev eth0 name "name" | rename interface eth0 to any name |
+| ip link set dev eth0 up | bring interface eth0 up |
+| ip a | show ip addr |
+| ip route show | list routing table |
+| ip route add default via "" | set default gateway to any IP set |
+| ss -tupl | list internet services on a system |
+| ss -tup | list active connections to/from system |
+| smbtree | find windows machine |
+| mount -t smbfs -o fmask=666,gues //windows/share /mnt/share | mount a windows share |
+| | |
+| sed s's/string1/string2/g' | replace string1 with string 2 |
+| sed 's/\\(.*\)1/\12/g' | modify anystring1 to anystring2 |
+| sed '/^\*#/d;/^\*$d' | remove comments and blank lines |
+| grep -Ev "^#\|^$" file | remove comments and blank lines (grep) |
+| sed ':a;/\\\$/N; s/\\\\n//; ta' | concat lines with trailing \ |
+| sed 's/\\([\`"$\\]\\)/\\\\1/g' | escape shell metachar active within double quotes |
+| sed 's/[\\t]\*$//' | remove trailing spaces from lines |
+| seq 10 \| sed "s/^/ /; s/ \*\\(.\\{7,\\}\\)/\\1/" | right align numbers |
+| seq 10 \| sed p | paste -- | duplicate a column |
+| sed -n '1000{p;g}' | print 1000th line |
+| sed -n '10,20p;20g' | print lines 10 to 20 |
+| sed -n 's/.\*<title>\\(.*\\)<\\/title>.\*/\\1/ip;T;q' | extract title from html web page |
+| sed -i 42d ~/.ssh/known_hosts | delete 42nd line |
+| echo 'Test' \| tr '[:lower:]''[:upper:]' | case convertion |
+| tr -s '[:blank:]''\\t'</proc/diskstats \| cut -f4 | cut fields separated by blanks |
+| seq 10 \| paste -sd '' | concat and separate line items to a single line |
+| | |
+
+
+
